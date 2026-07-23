@@ -1,4 +1,4 @@
-const BASE_URL = "https://intern-backend-2-t2wb.onrender.com/";
+const BASE_URL = "https://intern-backend-2-t2wb.onrender.com";
 
 // Save User
 $("#userForm").submit(function (e) {
