@@ -1,4 +1,4 @@
-const BASE_URL = "https://intern-backend-2-t2wb.onrender.com/api/users";
+const BASE_URL = "https://intern-backend-2-t2wb.onrender.com";
 
 // Save User
 $("#userForm").submit(function (e) {
@@ -59,7 +59,8 @@ $("#userForm").submit(function (e) {
          socket.emit("join_live_users", {
 
         name: response.data.firstName + " " + response.data.lastName,
-         email: response.data.email
+
+        email: response.data.email
 
          });
             alert(response.message);
@@ -86,7 +87,7 @@ if ($("#tableBody").length) {
 
     $.ajax({
 
-        url: BASE_URL,
+        url: "https://intern-backend-2-t2wb.onrender.com/api/users",
         method: "GET",
 
         success: function (response) {
