@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Users</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Live Users</h2>
+
+        <table border="1" cellpadding="10">
+
+            <thead>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Socket ID</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="liveUsersTable">
+
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <a href="index.html">← Back</a>
+
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="userModal"
+        style="display:none; position:fixed; top:20%; left:35%; width:350px; background:#fff; border:1px solid #000; padding:20px; box-shadow:0 0 10px gray;">
+
+        <h3>User Details</h3>
+
+        <div id="userDetails"></div>
+
+        <br>
+
+        <button onclick="$('#userModal').hide()">Close</button>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+
+    <script src="socket.js"></script>
+
+</body>
+
+</html>

@@ -56,6 +56,12 @@ $("#userForm").submit(function (e) {
 
         success: function (response) {
 
+         socket.emit("join_live_users", {
+
+        name: response.data.firstName + " " + response.data.lastName,
+         email: response.data.email
+
+         });
             alert(response.message);
             $("#userForm")[0].reset();
 
