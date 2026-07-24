@@ -87,7 +87,7 @@ if ($("#tableBody").length) {
 
     $.ajax({
 
-        url: "https://intern-backend-2-t2wb.onrender.com/api/users",
+        url: BASE_URL,
         method: "GET",
 
         success: function (response) {

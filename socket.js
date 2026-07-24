@@ -47,7 +47,7 @@ $(document).on("click", ".user-link", function (e) {
 
     $.ajax({
 
-        url: "http://localhost:5000/api/users",
+        url:  "https://intern-backend-2-t2wb.onrender.com/api/users",
         method: "GET",
 
         success: function (response) {
