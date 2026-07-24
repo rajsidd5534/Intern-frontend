@@ -56,13 +56,17 @@ $("#userForm").submit(function (e) {
 
         success: function (response) {
 
-         socket.emit("join_live_users", {
+            const liveUser = {
+                name: response.data.firstName + " " + response.data.lastName,
+                email: response.data.email
+            };
 
-        name: response.data.firstName + " " + response.data.lastName,
+            // Save user details
+            localStorage.setItem("liveUser", JSON.stringify(liveUser));
 
-        email: response.data.email
+            // Join live users
+            socket.emit("join_live_users", liveUser);
 
-         });
             alert(response.message);
             $("#userForm")[0].reset();
 

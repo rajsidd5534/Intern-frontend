@@ -5,6 +5,12 @@ socket.on("connect", () => {
     console.log("Connected");
     console.log(socket.id);
 
+    const liveUser = JSON.parse(localStorage.getItem("liveUser"));
+
+    if (liveUser) {
+        socket.emit("join_live_users", liveUser);
+    }
+
 });
 
 socket.on("live_users_list", (users) => {
@@ -47,7 +53,7 @@ $(document).on("click", ".user-link", function (e) {
 
     $.ajax({
 
-        url:  "https://intern-backend-2-t2wb.onrender.com/api/users",
+        url: "https://intern-backend-2-t2wb.onrender.com/api/users",
         method: "GET",
 
         success: function (response) {
