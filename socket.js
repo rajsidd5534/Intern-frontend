@@ -1,4 +1,4 @@
-const socket = io("https://intern-backend-2-t2wb.onrender.com/api/users");
+const socket = io("https://intern-backend-2-t2wb.onrender.com");
 
 socket.on("connect", () => {
 
