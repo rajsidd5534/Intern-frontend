@@ -5,8 +5,34 @@ $("#userForm").submit(function (e) {
 
     e.preventDefault();
 
-    const user = {
+    const alphabetRegex = /^[A-Za-z\s]+$/;
 
+    if (!alphabetRegex.test($("#firstName").val())) {
+        alert("First Name should contain only alphabets.");
+        return;
+    }
+
+    if (!alphabetRegex.test($("#lastName").val())) {
+        alert("Last Name should contain only alphabets.");
+        return;
+    }
+
+    if (!alphabetRegex.test($("#city").val())) {
+        alert("City should contain only alphabets.");
+        return;
+    }
+
+    if (!alphabetRegex.test($("#state").val())) {
+        alert("State should contain only alphabets.");
+        return;
+    }
+
+    if (!alphabetRegex.test($("#country").val())) {
+        alert("Country should contain only alphabets.");
+        return;
+    }
+
+    const user = {
         firstName: $("#firstName").val(),
         lastName: $("#lastName").val(),
         mobile: $("#mobile").val(),
@@ -19,30 +45,29 @@ $("#userForm").submit(function (e) {
 
         loginId: $("#loginId").val(),
         password: $("#password").val()
-
     };
 
     $.ajax({
 
         url: BASE_URL,
-
         method: "POST",
-
         contentType: "application/json",
-
         data: JSON.stringify(user),
 
         success: function (response) {
 
             alert(response.message);
-
             $("#userForm")[0].reset();
 
         },
 
         error: function (error) {
 
-            alert(error.responseJSON.message);
+            if (error.responseJSON && error.responseJSON.message) {
+                alert(error.responseJSON.message);
+            } else {
+                alert("Invalid input. Please check all fields.");
+            }
 
         }
 
@@ -56,7 +81,6 @@ if ($("#tableBody").length) {
     $.ajax({
 
         url: BASE_URL,
-
         method: "GET",
 
         success: function (response) {

@@ -15,8 +15,8 @@ body{
 }
 
 .container{
-    width:100%;
-    max-width:700px;
+    width:95%;
+    max-width:1400px;
     background:#fff;
     padding:30px;
     border-radius:12px;
@@ -78,36 +78,100 @@ a{
     font-weight:bold;
 }
 
+/* ---------- Table ---------- */
+
+.table-container{
+    width:100%;
+    overflow-x:auto;
+    margin-top:20px;
+}
+
 table{
     width:100%;
+    min-width:1200px;
     border-collapse:collapse;
-    margin-top:20px;
 }
 
 table th{
     background:#007bff;
-    color:white;
+    color:#fff;
+    padding:12px;
+}
+
+table td{
+    padding:12px;
+    border:1px solid #ddd;
+    text-align:center;
+    vertical-align:middle;
+    word-break:break-word;
 }
 
 table th,
 table td{
     border:1px solid #ddd;
-    padding:12px;
-    text-align:center;
 }
 
-tr:nth-child(even){
+tbody tr:nth-child(even){
     background:#f8f8f8;
+}
+
+tbody tr:hover{
+    background:#eef5ff;
+}
+
+/* Column Widths */
+
+th:nth-child(1),
+td:nth-child(1),
+th:nth-child(2),
+td:nth-child(2){
+    min-width:120px;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+    min-width:120px;
+}
+
+th:nth-child(4),
+td:nth-child(4){
+    min-width:240px;
+}
+
+th:nth-child(5),
+td:nth-child(5){
+    min-width:220px;
+}
+
+th:nth-child(6),
+td:nth-child(6){
+    min-width:140px;
+}
+
+th:nth-child(7),
+td:nth-child(7){
+    min-width:180px;
+}
+
+th:nth-child(8),
+td:nth-child(8){
+    min-width:120px;
+}
+
+th:nth-child(9),
+td:nth-child(9){
+    min-width:140px;
 }
 
 @media(max-width:768px){
 
-.container{
-    padding:20px;
-}
+    .container{
+        width:100%;
+        padding:20px;
+    }
 
-table{
-    font-size:13px;
-}
+    table{
+        min-width:1200px;
+    }
 
 }
